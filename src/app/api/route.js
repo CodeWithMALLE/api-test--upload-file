@@ -7,7 +7,7 @@ export async function POST(request) {
     const file = data.get("file")
 
     const fileName = file.name;
-    const filePath = path.join(process.cwd(), "src", fileName);
+    const filePath = path.join(process.cwd(), "src", "app", fileName);
 
     const buffer = Buffer.from(await file.arrayBuffer());
     await fs.promises.writeFile(filePath, buffer);
